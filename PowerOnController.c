@@ -20,6 +20,7 @@ int main(int argc, char* argv[])
         printf("Request a button press time\n");
         return 1;
     }
+    
     float press_time = atof(argv[1]);
     struct timespec * sleep_struct = (struct timespec *)malloc(sizeof(struct timespec));
 
@@ -41,6 +42,7 @@ int main(int argc, char* argv[])
 
     printf("Succesfully executed PWRON\n");
 
+    gpioTerminate();
     free(sleep_struct);
     return 0;
 }
